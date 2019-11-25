@@ -60,7 +60,6 @@
                     class="form-control"
                     type="email"
                     data-vv-name="email"
-                    data-vv-as="Phone Number"
                 >
             </div>
         </div>
@@ -70,7 +69,38 @@
 export default {
     name: "PersonalInformation",
     computed: {
-
+        firstName: {
+            get() {
+                return this.$store.state.Leads.data.firstName;
+            },
+            set(firstName) {
+                this.$store.commit("Leads/firstName", firstName);
+            }
+        },
+        lastName: {
+            get() {
+                return this.$store.state.Leads.data.lastName;
+            },
+            set(lastName) {
+                this.$store.commit("Leads/lastName", lastName);
+            }
+        },
+        phoneNumber: {
+            get() {
+                return this.$store.state.Leads.data.phoneNumber;
+            },
+            set(phoneNumber) {
+                this.$store.commit("Leads/phoneNumber", phoneNumber);
+            }
+        },
+        email: {
+            get() {
+                return this.$store.state.Leads.data.email;
+            },
+            set(email) {
+                this.$store.commit("Leads/email", email);
+            }
+        }
     }
 }
 </script>
