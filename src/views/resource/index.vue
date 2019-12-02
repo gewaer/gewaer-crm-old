@@ -16,6 +16,10 @@ import { mapState } from "vuex";
 
 export default {
     name: "CreateResource",
+    components: {
+        leads: () => import(/* webpackChunkName: "leads" */ "@v/resources/leads/"),
+        rotations: () => import(/* webpackChunkName: "rotations" */ "@v/resources/rotations/")
+    },
     data() {
         return {
             currentResource: {}
@@ -24,21 +28,23 @@ export default {
     computed: {
         ...mapState({
             // TODO: get this from application instead of company.
-            companyData: state => state.Company.data
+            applicationData: state => state.Application.data
         })
     },
     created() {
-        this.setResource(this.$route.params.resource);
+        // this.setResource(this.$route.params.resource);
     },
     methods: {
-        setResource(resourceName) {
-            // TODO: get this from application instead of company.
-            const resourceIndex = this.companyData.resources.findIndex(resource => {
-                return resource.name == resourceName;
-            });
+        // setResource(resourceName) {
+        //     // TODO: get this from application instead of company.
+        //     const hello = this.applicationData;
+        //     console.log(this.applicationData);
+        //     const resourceIndex = this.applicationData.resources.findIndex(resource => {
+        //         return resource.name == resourceName;
+        //     });
 
-            this.currentResource = this.companyData.resources[resourceIndex];
-        }
+        //     this.currentResource = this.applicationData.resources[resourceIndex];
+        // }
     }
 }
 </script>

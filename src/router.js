@@ -107,7 +107,7 @@ const router = new Router({
             component: () => import(/* webpackChunkName: "create-resource" */ "./views/resource/")
         },
         {
-            path: "/:resource/edit",
+            path: "/:resource/:id/edit",
             name: "edit-resource",
             component: () => import(/* webpackChunkName: "edit-resource" */ "./views/resource/")
         }

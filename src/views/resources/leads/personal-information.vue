@@ -40,7 +40,7 @@
                 </label>
                 <input
                     v-validate="'required'"
-                    v-model="lastName"
+                    v-model="phoneNumber"
                     class="form-control"
                     type="tel"
                     data-vv-name="phone-number"
@@ -56,7 +56,7 @@
                 </label>
                 <input
                     v-validate="'required'"
-                    v-model="lastName"
+                    v-model="email"
                     class="form-control"
                     type="email"
                     data-vv-name="email"
@@ -71,34 +71,34 @@ export default {
     computed: {
         firstName: {
             get() {
-                return this.$store.state.Leads.data.firstName;
+                return this.$store.state.Lead.data.firstName;
             },
             set(firstName) {
-                this.$store.commit("Leads/firstName", firstName);
+                this.$store.commit("Lead/SET_FIRST_NAME", firstName);
             }
         },
         lastName: {
             get() {
-                return this.$store.state.Leads.data.lastName;
+                return this.$store.state.Lead.data.lastName;
             },
             set(lastName) {
-                this.$store.commit("Leads/lastName", lastName);
+                this.$store.commit("Lead/SET_LAST_NAME", lastName);
             }
         },
         phoneNumber: {
             get() {
-                return this.$store.state.Leads.data.phoneNumber;
+                return this.$store.state.Lead.data.phoneNumber;
             },
             set(phoneNumber) {
-                this.$store.commit("Leads/phoneNumber", phoneNumber);
+                this.$store.commit("Lead/SET_PHONE", phoneNumber);
             }
         },
         email: {
             get() {
-                return this.$store.state.Leads.data.email;
+                return this.$store.state.Lead.data.email;
             },
             set(email) {
-                this.$store.commit("Leads/email", email);
+                this.$store.commit("Lead/SET_EMAIL", email);
             }
         }
     }

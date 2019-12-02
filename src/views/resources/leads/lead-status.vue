@@ -10,14 +10,14 @@
                 </label>
                 <multiselect
                     v-validate="'required'"
-                    :v-model="status"
-                    :show-labels="false"
-                    :options="rolesList"
+                    v-model="status"
+                    :show-labels="true"
+                    :options="statusList"
                     :searchable="false"
                     :class="{'border-danger': errors.has('status')}"
                     name="status"
                     track-by="id"
-                    label="status"
+                    label="name"
                     placeholder="Select a status."
                 />
             </div>
@@ -41,10 +41,10 @@ export default {
     computed: {
         status: {
             get() {
-                return this.$store.state.Leads.data.status;
+                return this.$store.state.Lead.data.status;
             },
             set(status) {
-                this.$store.commit("Leads/status", status);
+                this.$store.commit("Lead/SET_STATUS", status);
             }
         }
     }
