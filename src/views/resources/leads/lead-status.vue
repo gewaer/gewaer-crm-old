@@ -19,6 +19,7 @@
                     track-by="id"
                     label="name"
                     placeholder="Select a status."
+                    data-vv-validate-on="blur"
                 />
             </div>
         </div>

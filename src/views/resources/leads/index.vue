@@ -60,11 +60,10 @@ export default {
     },
     methods: {
         async submitForm() {
-            // const isFormValid = await this.validateFormFields();
-            // debugger;
-            // if (!isFormValid) {
-            //     return;
-            // }
+            const isFormValid = await this.validateFormFields();
+            if (!isFormValid) {
+                return;
+            }
 
             this.isLoading = true;
             axios({

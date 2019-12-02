@@ -15,7 +15,7 @@
                         </label>
                         <input
                             v-validate="'required'"
-                            v-model="name"
+                            v-model="rotation.name"
                             class="form-control"
                             type="text"
                             name="first-name"
@@ -55,7 +55,10 @@ export default {
     data() {
         return {
             isLoading: false,
-            name: ""
+            rotation: {
+                name: "",
+                users_id: this.rotationUserId
+            }
         }
     },
     computed: {
@@ -64,6 +67,9 @@ export default {
         }),
         isEditing() {
             return this.$route.params.id != undefined;
+        },
+        rotationUserId() {
+            return this.userId;
         }
     },
     created() {
@@ -82,11 +88,11 @@ export default {
 
             const url = this.isEditing ? `/rotations/${this.$route.params.id}` : "/rotations";
             const method = this.isEditing ? "PUT" : "POST";
-            const newRotation = { name: this.name, users_id: this.userId };
+            this.rotation["users_id"] = this.userId;
             axios({
                 url,
                 method,
-                data: newRotation
+                data: this.rotation
             }).then(() => {
                 this.$notify({
                     text: "Rotation form saved sucessfully",
@@ -103,8 +109,9 @@ export default {
             });
         },
         fetchRotation() {
+            this.isLoading = true;
             axios({ url: `/rotations/${this.$route.params.id}` }).then(({ data: rotation }) => {
-                this.name = rotation.name;
+                this.rotation = rotation;
             }).catch((error) => {
                 this.$notify({
                     text: error.message,

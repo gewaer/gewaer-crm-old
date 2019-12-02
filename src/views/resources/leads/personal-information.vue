@@ -13,6 +13,7 @@
                     type="text"
                     data-vv-name="first-name"
                     data-vv-as="First Name"
+                    data-vv-validate-on="blur"
                 >
             </div>
         </div>
@@ -29,6 +30,7 @@
                     type="text"
                     data-vv-name="last-name"
                     data-vv-as="Last Name"
+                    data-vv-validate-on="blur"
                 >
             </div>
         </div>
@@ -45,6 +47,7 @@
                     type="tel"
                     data-vv-name="phone-number"
                     data-vv-as="Phone Number"
+                    data-vv-validate-on="blur"
                 >
             </div>
         </div>
@@ -60,6 +63,7 @@
                     class="form-control"
                     type="email"
                     data-vv-name="email"
+                    data-vv-validate-on="blur"
                 >
             </div>
         </div>
