@@ -71,7 +71,9 @@ const actions = {
             const [{ data: userData }, { data: companies }, { data: resources }] = response;
             const currentCompany = companies.find((company) => company.id == userData.default_company);
 
-            await dispatch("getData", currentCompany.apps.apps_id);
+            if (currentCompany.apps) {
+                await dispatch("getData", currentCompany.apps.apps_id);
+            }
 
             dispatch("setGlobalData", {
                 userData,
