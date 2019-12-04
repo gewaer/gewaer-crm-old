@@ -51,7 +51,6 @@
                     >
                 </div>
             </div>
-            <!-- TODO: for some reason this should be a multiselect, need to find out why -->
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div :class="{ 'border-danger': errors.has('email') }" class="form-group form-group-default">
                     <label :class="{'text-danger': errors.has('email') }">
@@ -84,7 +83,6 @@
                     >
                 </div>
             </div>
-            <!-- TODO: How will percentage be store? as text or a number between 1 and 100 -->
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div :class="{ 'border-danger': errors.has('percentage') }" class="form-group form-group-default">
                     <label :class="{'text-danger': errors.has('percentage') }">
