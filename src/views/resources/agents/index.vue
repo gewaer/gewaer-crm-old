@@ -34,7 +34,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div :class="{ 'border-danger': errors.has('user-name') }" class="form-group form-group-default">

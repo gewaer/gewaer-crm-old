@@ -19,7 +19,8 @@ export default {
     components: {
         leads: () => import(/* webpackChunkName: "leads" */ "@v/resources/leads/"),
         rotations: () => import(/* webpackChunkName: "rotations" */ "@v/resources/rotations/"),
-        leadsOwner: () => import(/* webpackChunkName: "lead-owners" */ "@v/resources/lead-owners/")
+        leadsOwner: () => import(/* webpackChunkName: "lead-owners" */ "@v/resources/lead-owners/"),
+        rotationsUsers: () => import(/* webpackChunkName: "rotation-users" */ "@v/resources/rotations/users/")
     },
     data() {
         return {
