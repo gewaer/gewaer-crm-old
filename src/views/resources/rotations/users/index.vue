@@ -182,7 +182,19 @@ export default {
                 });
             }).finally(() => {
                 this.isLoading = false;
-            })
+            });
+        },
+        fetchLeadOwners() {
+            axios({ url: `/lead-owners` }).then(({ data: leadOwners }) => {
+                this.leadOwners = leadOwners;
+            }).catch((error) => {
+                this.$notify({
+                    text: error.message,
+                    type: "error"
+                });
+            }).finally(() => {
+                this.isLoading = false;
+            });
         }
     }
 }
