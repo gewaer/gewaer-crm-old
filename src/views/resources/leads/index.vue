@@ -46,10 +46,14 @@ export default {
         personalInformation: () => import(/* webpackChunkName: "personal-information" */ "./personal-information"),
         leadStatus: () => import(/* webpackChunkName: "lead-status" */ "./lead-status")
     },
+    data() {
+        return {
+            isLoading: false
+        }
+    },
     computed: {
         ...mapState({
-            lead: state => state.Lead.data,
-            isLoading: state => state.Application.isLoading
+            lead: state => state.Lead.data
         })
     },
     created() {

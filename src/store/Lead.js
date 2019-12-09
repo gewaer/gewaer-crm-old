@@ -4,7 +4,7 @@ const state = {
         lastname: "",
         phone: "",
         email: "",
-        status: {}
+        status: null
     }
 };
 
@@ -48,7 +48,7 @@ const actions = {
             lastName: "",
             phone: "",
             email: "",
-            status: {}
+            status: null
         }
         commit("SET_DATA", data);
     }

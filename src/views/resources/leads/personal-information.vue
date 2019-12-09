@@ -13,7 +13,6 @@
                     type="text"
                     data-vv-name="first-name"
                     data-vv-as="First Name"
-                    data-vv-validate-on="blur"
                 >
             </div>
         </div>
@@ -70,12 +69,14 @@
     </div>
 </template>
 <script>
+
+
 export default {
     name: "PersonalInformation",
     computed: {
         firstName: {
             get() {
-                return this.$store.state.Lead.data.firstName;
+                return this.$store.state.Lead.data.firstname;
             },
             set(firstName) {
                 this.$store.commit("Lead/SET_FIRST_NAME", firstName);
@@ -83,7 +84,7 @@ export default {
         },
         lastName: {
             get() {
-                return this.$store.state.Lead.data.lastName;
+                return this.$store.state.Lead.data.lastname;
             },
             set(lastName) {
                 this.$store.commit("Lead/SET_LAST_NAME", lastName);
@@ -91,7 +92,7 @@ export default {
         },
         phoneNumber: {
             get() {
-                return this.$store.state.Lead.data.phoneNumber;
+                return this.$store.state.Lead.data.phone;
             },
             set(phoneNumber) {
                 this.$store.commit("Lead/SET_PHONE", phoneNumber);
