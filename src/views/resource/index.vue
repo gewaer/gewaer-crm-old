@@ -1,7 +1,7 @@
 <template>
     <div class="create-resource">
         <!-- TODO: change label when editing -->
-        <h4 class="section-title p-l-10">Create {{ currentResource.title }}</h4>
+        <h4 class="section-title p-l-10">Create {{ currentResource.name }}</h4>
         <div class="card">
             <div class="card-block">
                 <!-- <form class="resource-form" novalidate/> -->
@@ -30,23 +30,19 @@ export default {
     computed: {
         ...mapState({
             // TODO: get this from application instead of company.
-            applicationData: state => state.Application.data
+            applicationResources: state => state.Application.resources
         })
     },
     created() {
-        // this.setResource(this.$route.params.resource);
+        this.setResource(this.$route.params.resource);
     },
     methods: {
-        // setResource(resourceName) {
-        //     // TODO: get this from application instead of company.
-        //     const hello = this.applicationData;
-        //     console.log(this.applicationData);
-        //     const resourceIndex = this.applicationData.resources.findIndex(resource => {
-        //         return resource.name == resourceName;
-        //     });
-
-        //     this.currentResource = this.applicationData.resources[resourceIndex];
-        // }
+        setResource(resourceName) {
+            const resourceIndex = this.applicationResources.findIndex(resource => {
+                return resource.slug == resourceName;
+            });
+            this.currentResource = this.applicationResources[resourceIndex];
+        }
     }
 }
 </script>
