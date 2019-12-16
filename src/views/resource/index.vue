@@ -1,10 +1,12 @@
 <template>
     <div class="create-resource">
         <!-- TODO: change label when editing -->
-        <h4 class="section-title p-l-10">Create {{ currentResource.name }}</h4>
+        <h4 class="section-title p-l-10">
+            Create {{ currentResource.name }}
+        </h4>
         <div class="card">
             <div class="card-block">
-                <component :is="$route.params.resource"/>
+                <component :is="$route.params.resource" />
             </div>
         </div>
     </div>

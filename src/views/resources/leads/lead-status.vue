@@ -9,8 +9,8 @@
                     <span v-if="errors.has('status')">(required)</span>
                 </label>
                 <multiselect
-                    v-validate="'required'"
                     v-model="status"
+                    v-validate="'required'"
                     :show-labels="true"
                     :options="statusList"
                     :searchable="false"

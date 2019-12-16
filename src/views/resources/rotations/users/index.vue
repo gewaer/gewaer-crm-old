@@ -2,7 +2,9 @@
     <form class="resource-form rotation-users" @submit.prevent="submitForm()">
         <div class="row">
             <div class="col-12">
-                <h3 class="title">Characteristics</h3>
+                <h3 class="title">
+                    Characteristics
+                </h3>
             </div>
         </div>
         <div class="row">
@@ -13,8 +15,8 @@
                         <span v-if="errors.has('zoho-id')">(required)</span>
                     </label>
                     <input
-                        v-validate="'required'"
                         v-model="rotationUser.zoho_id"
+                        v-validate="'required'"
                         class="form-control"
                         type="text"
                         name="zoho-id"
@@ -29,8 +31,8 @@
                         <span v-if="errors.has('name')">(required)</span>
                     </label>
                     <input
-                        v-validate="'required'"
                         v-model="rotationUser.name"
+                        v-validate="'required'"
                         class="form-control"
                         type="text"
                         name="name"
@@ -47,8 +49,8 @@
                         <span v-if="errors.has('email')">(required)</span>
                     </label>
                     <input
-                        v-validate="'required'"
                         v-model="rotationUser.email"
+                        v-validate="'required'"
                         class="form-control"
                         type="email"
                         name="email"
@@ -63,8 +65,8 @@
                         <span v-if="errors.has('phone')">(required)</span>
                     </label>
                     <input
-                        v-validate="'required'"
                         v-model="rotationUser.phone"
+                        v-validate="'required'"
                         class="form-control"
                         type="phone"
                         name="phone"
@@ -73,7 +75,6 @@
             </div>
         </div>
         <div class="row">
-
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div :class="{ 'border-danger': errors.has('percentage') }" class="form-group form-group-default">
                     <label :class="{'text-danger': errors.has('percentage') }">
@@ -81,8 +82,8 @@
                         <span v-if="errors.has('percentage')">(required)</span>
                     </label>
                     <input
-                        v-validate="'required'"
                         v-model="rotationUser.percentage"
+                        v-validate="'required'"
                         min="0"
                         max="100"
                         type="number"

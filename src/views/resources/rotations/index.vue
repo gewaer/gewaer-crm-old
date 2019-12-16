@@ -3,7 +3,9 @@
         <form class="resource-form" @submit.prevent="submitForm()">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="title"> Create New Rotation </h3>
+                    <h3 class="title">
+                        Create New Rotation
+                    </h3>
                 </div>
             </div>
             <div class="row">
@@ -14,8 +16,8 @@
                             <span v-if="errors.has('first-name')">(required)</span>
                         </label>
                         <input
-                            v-validate="'required'"
                             v-model="rotation.name"
+                            v-validate="'required'"
                             class="form-control"
                             type="text"
                             name="first-name"

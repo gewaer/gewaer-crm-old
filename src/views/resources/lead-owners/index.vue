@@ -3,7 +3,9 @@
         <form class="resource-form" @submit.prevent="submitForm">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="title">Lead Owner</h3>
+                    <h3 class="title">
+                        Lead Owner
+                    </h3>
                 </div>
             </div>
 
@@ -15,8 +17,8 @@
                             <span v-if="errors.has('first-name')">(required)</span>
                         </label>
                         <input
-                            v-validate="'required'"
                             v-model="leadOwners.firstname"
+                            v-validate="'required'"
                             class="form-control"
                             type="text"
                             data-vv-name="first-name"
@@ -32,8 +34,8 @@
                             <span v-if="errors.has('last-name')">(required)</span>
                         </label>
                         <input
-                            v-validate="'required'"
                             v-model="leadOwners.lastname"
+                            v-validate="'required'"
                             class="form-control"
                             type="text"
                             data-vv-name="last-name"
@@ -49,8 +51,8 @@
                             <span v-if="errors.has('phone-number')">(required)</span>
                         </label>
                         <input
-                            v-validate="'required'"
                             v-model="leadOwners.phone"
+                            v-validate="'required'"
                             class="form-control"
                             type="tel"
                             data-vv-name="phone-number"
@@ -66,8 +68,8 @@
                             <span v-if="errors.has('email')">(required)</span>
                         </label>
                         <input
-                            v-validate="'required'"
                             v-model="leadOwners.email"
+                            v-validate="'required'"
                             class="form-control"
                             type="email"
                             data-vv-name="email"
@@ -82,8 +84,8 @@
                             <span v-if="errors.has('address')">(required)</span>
                         </label>
                         <input
-                            v-validate="'required'"
                             v-model="leadOwners.address"
+                            v-validate="'required'"
                             class="form-control"
                             type="text"
                             data-vv-name="address"
