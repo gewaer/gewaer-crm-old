@@ -110,6 +110,11 @@ const router = new Router({
             path: "/:resource/:id/edit",
             name: "edit-resource",
             component: () => import(/* webpackChunkName: "edit-resource" */ "./views/resource/")
+        },
+        {
+            path: "/:resource/:leadOwnerId",
+            name: "rotation-users",
+            component: () => import(/* webpackChunkName: "rotation-users" */ "./views/resources/rotations/users/browse.vue") 
         }
     ]
 });
