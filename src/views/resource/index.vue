@@ -4,7 +4,6 @@
         <h4 class="section-title p-l-10">Create {{ currentResource.name }}</h4>
         <div class="card">
             <div class="card-block">
-                <!-- <form class="resource-form" novalidate/> -->
                 <component :is="$route.params.resource"/>
             </div>
         </div>

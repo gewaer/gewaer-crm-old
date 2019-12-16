@@ -86,6 +86,7 @@ export default {
                     type: "error"
                 });
             }).finally(() => {
+                this.isLoading = false;
             })
         },
         async validateFormFields() {
