@@ -30,7 +30,6 @@ export default {
     },
     computed: {
         ...mapState({
-            // TODO: get this from application instead of company.
             applicationResources: state => state.Application.resources
         })
     },
