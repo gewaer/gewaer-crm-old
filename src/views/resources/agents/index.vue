@@ -12,7 +12,7 @@
                         v-validate="'required'"
                         class="form-control"
                         type="text"
-                        data-vv-name="first-name"
+                        name="first-name"
                         data-vv-as="First Name"
                     >
                 </div>
@@ -28,7 +28,7 @@
                         v-validate="'required'"
                         class="form-control"
                         type="text"
-                        data-vv-name="last-name"
+                        name="last-name"
                         data-vv-as="Last Name"
                     >
                 </div>
@@ -46,7 +46,8 @@
                         v-validate="'required'"
                         class="form-control"
                         type="text"
-                        data-vv-name="user-name"
+                        name="user-name"
+                        data-vv-as="User Name"
                     >
                 </div>
             </div>
@@ -61,7 +62,7 @@
                         v-validate="'required'"
                         class="form-control"
                         type="email"
-                        data-vv-name="email"
+                        name="email"
                     >
                 </div>
             </div>
@@ -78,7 +79,7 @@
                         v-validate="'required'"
                         class="form-control"
                         type="password"
-                        data-vv-name="password"
+                        name="password"
                     >
                 </div>
             </div>
@@ -93,7 +94,8 @@
                         v-validate="'required'"
                         class="form-control"
                         type="password"
-                        data-vv-name="confirm-password"
+                        name="confirm-password"
+                        data-vv-as="Confirm Password"
                     >
                 </div>
             </div>

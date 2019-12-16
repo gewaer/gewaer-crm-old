@@ -11,7 +11,7 @@
                     v-validate="'required'"
                     class="form-control"
                     type="text"
-                    data-vv-name="first-name"
+                    name="first-name"
                     data-vv-as="First Name"
                 >
             </div>
@@ -27,7 +27,7 @@
                     v-validate="'required'"
                     class="form-control"
                     type="text"
-                    data-vv-name="last-name"
+                    name="last-name"
                     data-vv-as="Last Name"
                     data-vv-validate-on="blur"
                 >
@@ -44,7 +44,7 @@
                     v-validate="'required'"
                     class="form-control"
                     type="tel"
-                    data-vv-name="phone-number"
+                    name="phone-number"
                     data-vv-as="Phone Number"
                     data-vv-validate-on="blur"
                 >
@@ -61,7 +61,7 @@
                     v-validate="'required'"
                     class="form-control"
                     type="email"
-                    data-vv-name="email"
+                    name="email"
                     data-vv-validate-on="blur"
                 >
             </div>
