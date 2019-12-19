@@ -1,12 +1,14 @@
 <template>
     <div class="apps-settings">
-        <h4 class="section-title p-l-10">Settings</h4>
+        <h4 class="section-title p-l-10">
+            Settings
+        </h4>
         <div class="card card-transparent">
             <div class="card-body no-padding">
                 <div class="row">
                     <div class="col">
                         <div class="card flex-md-row">
-                            <ul id="tab-3" class="nav nav-tabs nav-tabs-simple nav-tabs-left bg-white">
+                            <ul id="tab-3" class="nav nav-tabs">
                                 <li v-for="tab in tabs" :key="tab.name" class="nav-item">
                                     <router-link
                                         :to="{ name: tab.name }"
@@ -18,7 +20,7 @@
                             </ul>
                             <div class="tab-content bg-white">
                                 <div class="tab-pane active">
-                                    <slot/>
+                                    <slot />
                                 </div>
                             </div>
                         </div>

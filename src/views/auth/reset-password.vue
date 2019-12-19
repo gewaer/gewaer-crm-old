@@ -11,28 +11,28 @@
                 autocomplete="off"
                 @submit.prevent="verifyFields()"
             >
-                <div class="form-group form-group-default required">
+                <div :class="{ 'error' : errors.first('password') }" class="form-group form-group-default required">
                     <label>Password</label>
                     <div class="controls">
                         <input
-                            v-validate="form.fields.password.validations"
                             ref="password"
                             v-model="form.fields.password.value"
+                            v-validate="form.fields.password.validations"
                             type="password"
                             class="form-control"
                             name="password"
                             placeholder="Credentials"
                             autocomplete="off"
                         >
-                        <span class="text-danger">{{ errors.first("password") }}</span>
                     </div>
                 </div>
-                <div class="form-group form-group-default required">
+                <span class="text-danger">{{ errors.first("password") }}</span>
+                <div :class="{ 'error' : errors.first('verifyPassword') }" class="form-group form-group-default required">
                     <label>Confirm Password</label>
                     <div class="controls">
                         <input
-                            v-validate="form.fields.verifyPassword.validations"
                             v-model="form.fields.verifyPassword.value"
+                            v-validate="form.fields.verifyPassword.validations"
                             type="password"
                             name="verifyPassword"
                             data-vv-as="password"
@@ -40,16 +40,12 @@
                             class="form-control"
                             autocomplete="off"
                         >
-                        <span class="text-danger">{{ errors.first("verifyPassword") }}</span>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 no-padding sm-p-l-10" />
-                    <div class="col-md-6 d-flex align-items-center justify-content-end">
-                        <a href="#" class="text-info small">Help? Contact Support</a>
-                    </div>
-                </div>
-                <button class="btn btn-primary btn-cons m-t-10" type="submit">Reset Password</button>
+                <span class="text-danger">{{ errors.first("verifyPassword") }}</span>
+                <button class="btn btn-primary btn-block my-4" type="submit">
+                    Reset Password
+                </button>
             </form>
         </template>
     </auth-container>

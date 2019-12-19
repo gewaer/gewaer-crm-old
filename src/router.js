@@ -10,7 +10,6 @@ import UsersInvites from "@/views/auth/users-invites.vue";
 import UsersInvitesConfirmation from "@/views/auth/users-invites-confirmation.vue";
 import ResetPassword from "@/views/auth/reset-password.vue";
 import BrowseList from "./views/browse/";
-import createResource from "./views/resource/create.vue";
 import routerValidator from "@/config/routerValidator";
 
 const { GwSettingsRoutes } = require(`./import.${process.env.VUE_APP_IMPORTS}`);
@@ -103,9 +102,19 @@ const router = new Router({
             component: BrowseList
         },
         {
-            path: "/browse/:resource/create",
+            path: "/:resource/create",
             name: "create-resource",
-            component: createResource
+            component: () => import(/* webpackChunkName: "create-resource" */ "./views/resource/")
+        },
+        {
+            path: "/:resource/:id/edit",
+            name: "edit-resource",
+            component: () => import(/* webpackChunkName: "edit-resource" */ "./views/resource/")
+        },
+        {
+            path: "/:resource/:leadOwnerId",
+            name: "rotation-users",
+            component: () => import(/* webpackChunkName: "rotation-users" */ "./views/resources/rotations/users/browse.vue") 
         }
     ]
 });
