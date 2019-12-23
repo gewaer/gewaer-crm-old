@@ -1,16 +1,9 @@
 <template>
     <div class="lead-owners">
-        <form class="resource-form" @submit.prevent="submitForm">
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="title">
-                        Lead Owner
-                    </h3>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
+        <lead-owners-modal />
+        <form @submit.prevent="submitForm">
+            <div class="form-box row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     <div :class="{ 'border-danger': errors.has('first-name') }" class="form-group form-group-default">
                         <label :class="{'text-danger': errors.has('first-name') }">
                             First Name
@@ -19,15 +12,15 @@
                         <input
                             v-model="leadOwners.firstname"
                             v-validate="'required'"
+                            autofocus="true"
                             class="form-control"
                             type="text"
                             name="first-name"
                             data-vv-as="First Name"
-                            data-vv-validate-on="blur"
                         >
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     <div :class="{ 'border-danger': errors.has('last-name') }" class="form-group form-group-default">
                         <label :class="{'text-danger': errors.has('last-name') }">
                             Last Name
@@ -44,7 +37,7 @@
                         >
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     <div :class="{ 'border-danger': errors.has('phone-number') }" class="form-group form-group-default">
                         <label :class="{'text-danger': errors.has('phone-number') }">
                             Phone Number
@@ -61,7 +54,7 @@
                         >
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     <div :class="{ 'border-danger': errors.has('email') }" class="form-group form-group-default">
                         <label :class="{'text-danger': errors.has('email') }">
                             Email
@@ -77,7 +70,7 @@
                         >
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-12">
                     <div :class="{ 'border-danger': errors.has('address') }" class="form-group form-group-default">
                         <label :class="{'text-danger': errors.has('address') }">
                             Address
@@ -100,7 +93,7 @@
                         :disabled="isLoading"
                         :title="isLoading ? 'Processing, wait a moment...' : 'Save'"
                         :class="{ 'deactivated': isLoading }"
-                        class="btn m-1 btn-primary float-right"
+                        class="action-button btn m-1 btn-primary float-right"
                     >
                         Save
                     </button>
@@ -108,7 +101,7 @@
                         :to="{ name: 'browse', params: { resource: 'leads'} }"
                         :disabled="isLoading"
                         :title="isLoading ? 'Processing, wait a moment...' : 'Cancel'"
-                        class="btn m-1 btn-danger float-right"
+                        class="action-button btn m-1 btn-danger float-right"
                     >
                         Cancel
                     </router-link>
@@ -122,6 +115,9 @@
 import { mapState } from "vuex";
 export default {
     name: "LeadOwners",
+    components: {
+        leadOwnersModal: () => import(/* webpackChunkName: "lead-owners-modal" */ "@v/resources/lead-owners/lead-owners-modal")
+    },
     data() {
         return {
             isLoading: false,
@@ -195,6 +191,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.lead-owners {
+    // padding: 10px;
 
-</style>
+    .action-button {
+        width: 120px;
+    }
+
+    .form-box {
+        margin: 30px 40px 25px 40px;
+    }
+}
+</style>>
